@@ -2,6 +2,7 @@
 
 # Notaeshell - A bash-script for working with tasks and notes in the terminal.
 # Version: 0.1 beta
+# Started: 31.05.2026
 #
 # Author: Itcor (TheItcor)
 # Main repository: codeberg.org/Itcor/Notaesh
