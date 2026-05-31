@@ -6,7 +6,7 @@
 # Started: 31.05.2026
 #
 # Author: Itcor (TheItcor)
-# Main repository: codeberg.org/Itcor/Notaesh
+# Main repository: codeberg.org/Itcor/NotaeShell
 # Github-mirror: -
 # Suggestions and corrections will be extremely welcome.
 
