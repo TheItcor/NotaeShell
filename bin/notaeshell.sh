@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ================================ Notaeshell ================================
 #
-# A bash-script for working with tasks and notes in the terminal.
+# Notaeshell (Notaesh) - A bash-script for working with tasks and notes in the terminal.
 # Version: 0.1 "Cozy Yurt"
 # Started: 31.05.2026
 #
