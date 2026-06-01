@@ -33,7 +33,21 @@ edit_note() {
 
 #
 delete_note() {
-    echo "Delete."
+    local number_line="$1"
+
+    # Catching the wrong input
+    if [[ -z "$number_line" ]]; then
+        echo "[ERR]: line number not specified."
+        return 1
+    fi
+    if ! [[ "$number_line" =~ ^[0-9]+$ ]]; then
+        echo "[ERR]: The second argument must be a number."
+        return 1
+    fi
+
+    echo "nsh: $number_line note was deleted."
+    sed -i "${number_line}d" "$notes_file_path"
+    read_file
 }
 
 #
