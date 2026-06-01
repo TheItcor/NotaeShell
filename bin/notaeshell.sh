@@ -15,7 +15,10 @@ parse_args() {
 
 }
 
-
+read_file() {
+    touch ~/.notaesh
+    mapfile -t lines < ~/.notaesh
+}
 
 main() {
 
@@ -24,6 +27,7 @@ main() {
     parse_args "$@"
 
     # ========= 1. Read file with tasks/notes =========
+    read_file
 
     # ========= 2. If args != 0: Execute user's command =========
 
@@ -31,6 +35,10 @@ main() {
 
     # ========= 4. Print tasks, notes =========
     printf "========= Notash ==========\n"
+
+    for i in "${!lines[@]}"; do
+        echo "$((i + 1)): ${lines[$i]}"
+    done
 
     printf "===========================\n"
 }
