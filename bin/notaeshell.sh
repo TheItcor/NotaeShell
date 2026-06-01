@@ -11,6 +11,48 @@
 # Suggestions and corrections will be extremely welcome.
 
 
+#
+print_help() {
+    cat <<EOF
+Notaeshell - a humble terminal task manager written in bash.
+------------------------------------------------------------
+nsh <text>   - adds new note
+nsh -h       - prints all commands
+nsh -e [num] - changes the text of the selected note
+nsh -d [num] - deletes the selected note
+nsh -c       - prints configs
+------------------------------------------------------------
+Main repository: codeberg.org/Itcor/NotaeShell
+EOF
+}
+
+#
+edit_note() {
+    echo "Edit."
+}
+
+#
+delete_note() {
+    echo "Delete."
+}
+
+#
+edit_config() {
+    echo "Configuration"
+}
+
+#
+add_new_note() {
+    echo "New note"
+}
+
+
+print_notes() {
+    printf "========= Notash ==========\n"
+
+    for i in "${!lines[@]}"; do
+        echo "$((i + 1)): ${lines[$i]}"
+    done
 
 
 # parse_args() - Parse arguments from main() 
