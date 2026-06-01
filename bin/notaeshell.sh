@@ -57,7 +57,7 @@ print_notes() {
     printf "===========================\n"
 }
 
-# parse_args() - Parse arguments from main() 
+# parse_args() - Parse arguments from main()
 #
 # nsh <text>   - adds new note
 # nsh -h       - prints all commands
@@ -66,21 +66,27 @@ print_notes() {
 # nsh -c       - prints configs
 #
 parse_args() {
+
+    [ $# -eq 0 ] && print_notes "$@" && return 0 # if no args - return 0
+
     case "$1" in
         -h)
-        echo "Help.";;
+        print_help;;
 
         -e)
-        echo "Edit.";;
+        edit_note "$2"
+        print_notes "$@";;
 
         -d)
-        echo "Delete.";;
+        delete_note "$2"
+        print_notes "$@";;
 
         -c)
-        echo "Configuration";;
+        edit_config;;
 
         *)
-        echo "New note";;
+        add_new_note "$@"
+        print_notes "$@";;
 
     esac
 }
@@ -100,9 +106,6 @@ main() {
     # ========= 1. Parse Args =========
     # no args: just print all tasks/notes
     parse_args "$@"
-
-    # ========= 1. Read file with tasks/notes =========
-    read_file
 
     # ========= 2. If args != 0: Execute user's command =========
 
