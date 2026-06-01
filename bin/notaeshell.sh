@@ -54,6 +54,8 @@ print_notes() {
         echo "$((i + 1)): ${lines[$i]}"
     done
 
+    printf "===========================\n"
+}
 
 # parse_args() - Parse arguments from main() 
 #
@@ -92,7 +94,10 @@ read_file() {
 
 main() {
 
-    # ========= 0. Parse Args =========
+    # ========= 0. Read file with tasks/notes =========
+    read_file
+
+    # ========= 1. Parse Args =========
     # no args: just print all tasks/notes
     parse_args "$@"
 
@@ -104,13 +109,7 @@ main() {
     # ========= 3. If args == 0: Write task/notes in file =========
 
     # ========= 4. Print tasks, notes =========
-    printf "========= Notash ==========\n"
-
-    for i in "${!lines[@]}"; do
-        echo "$((i + 1)): ${lines[$i]}"
-    done
-
-    printf "===========================\n"
+    # moved to parse_args()
 }
 
 main "$@"
