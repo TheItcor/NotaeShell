@@ -11,7 +11,19 @@
 # Suggestions and corrections will be extremely welcome.
 
 
-#
+# ==== Global variables for config ====
+# the path to the file where the notes are stored
+notes_file_path=~/.notaesh
+
+
+# read_file() - Create a /.notaesh in your home directory & read the notes from that
+read_file() {
+    touch "$notes_file_path"
+    mapfile -t lines < "$notes_file_path"
+}
+
+
+# Prints flags and info about notaesh
 print_help() {
     cat <<EOF
 Notaeshell - a humble terminal task manager written in bash.
