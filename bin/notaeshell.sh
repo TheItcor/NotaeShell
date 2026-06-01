@@ -15,6 +15,8 @@ parse_args() {
 
 }
 
+
+# read_file() - Create a /.notaesh in your home directory & read the notes from that
 read_file() {
     touch ~/.notaesh
     mapfile -t lines < ~/.notaesh
