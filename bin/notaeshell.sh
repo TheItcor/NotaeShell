@@ -57,9 +57,9 @@ delete_note() {
         return 1
     fi
 
-    echo "nsh: $number_line note was deleted."
     sed -i "${number_line}d" "$notes_file_path"
     read_file
+    echo "nsh: $number_line note was deleted."
 }
 
 #
