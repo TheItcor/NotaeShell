@@ -69,7 +69,11 @@ edit_config() {
 
 #
 add_new_note() {
-    echo "New note"
+    local new_note="$*"
+
+    echo "$new_note" >> "$notes_file_path"
+    read_file
+    echo "nsh: new note wad added."
 }
 
 
