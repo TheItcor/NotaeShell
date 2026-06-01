@@ -7,7 +7,7 @@
 #
 # Author: Itcor (TheItcor)
 # Main repository: codeberg.org/Itcor/NotaeShell
-# Github-mirror: -
+# Github-mirror:   github.com/TheItcor/NotaeShell
 # Suggestions and corrections will be extremely welcome.
 
 
