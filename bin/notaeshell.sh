@@ -10,9 +10,35 @@
 # Github-mirror: -
 # Suggestions and corrections will be extremely welcome.
 
-parse_args() {
-    POSITIONAL_ARGS=()
 
+
+
+# parse_args() - Parse arguments from main() 
+#
+# nsh <text>   - adds new note
+# nsh -h       - prints all commands
+# nsh -e [num] - changes the text of the selected note
+# nsh -d [num] - deletes the selected note
+# nsh -c       - prints configs
+#
+parse_args() {
+    case "$1" in
+        -h)
+        echo "Help.";;
+
+        -e)
+        echo "Edit.";;
+
+        -d)
+        echo "Delete.";;
+
+        -c)
+        echo "Configuration";;
+
+        *)
+        echo "New note";;
+
+    esac
 }
 
 
@@ -33,7 +59,7 @@ main() {
 
     # ========= 2. If args != 0: Execute user's command =========
 
-    # ========= 3. If args != 0: Write task/notes in file =========
+    # ========= 3. If args == 0: Write task/notes in file =========
 
     # ========= 4. Print tasks, notes =========
     printf "========= Notash ==========\n"
