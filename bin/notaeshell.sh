@@ -94,6 +94,12 @@ add_new_note() {
 
 
 print_notes() {
+
+    if [ -z "${lines[0]}" ]; then
+        echo "nsh: there are no notes."
+        exit 1
+    fi
+
     printf "========= Notash ==========\n"
 
     for i in "${!lines[@]}"; do
