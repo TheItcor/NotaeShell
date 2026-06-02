@@ -40,7 +40,23 @@ EOF
 
 #
 edit_note() {
-    echo "Edit."
+    local number_line="$1"
+    local new_text
+    read -p "New text for note: " new_text
+
+    # Catching the wrong input
+    if [[ -z "$number_line" ]]; then
+        echo "[ERR]: line number not specified."
+        return 1
+    fi
+    if ! [[ "$number_line" =~ ^[0-9]+$ ]]; then
+        echo "[ERR]: The second argument must be a number."
+        return 1
+    fi
+
+    sed -i "${number_line}c\\${new_text}" "$notes_file_path"
+    read_file
+    echo "nsh: $number_line note was edited."
 }
 
 #
