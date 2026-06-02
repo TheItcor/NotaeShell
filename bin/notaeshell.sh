@@ -2,7 +2,7 @@
 # ================================ Notaeshell ================================
 #
 # Notaeshell (Notaesh) - A bash-script for working with tasks and notes in the terminal.
-# Version: 0.1 "Cozy Yurt"
+# Version: 0.2 "Warm Yaranga"
 # Started: 31.05.2026
 #
 # Author: Itcor (TheItcor)
