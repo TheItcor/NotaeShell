@@ -19,4 +19,5 @@ chmod +x install.sh
 | `nsh`          | Prints all notes                     |
 | `nsh -h`       | Prints all commands                  |
 | `nsh <text>`   | Adds a new note                      |
+| `nsh -e [num]` | Edits the selected note              |
 | `nsh -d [num]` | Deletes the selected note            |
